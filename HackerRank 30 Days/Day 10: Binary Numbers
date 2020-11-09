@@ -6,8 +6,7 @@ public class Solution {
         int n = scan.nextInt();
         scan.close();
         System.out.println(consecutiveOnes(n));
-    }
-    
+    }  
     public static int consecutiveOnes(int n) {
         int count = 0;
         int max   = 0;

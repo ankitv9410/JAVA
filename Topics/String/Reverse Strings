@@ -1,0 +1,59 @@
+1) By StringBuilder / StringBuffer
+
+class Solution{
+	static String name = "Ankit";
+	public static void main(String args[]) {
+		StringBuilder sb = new StringBuilder(name);
+		System.out.println(sb.reverse());
+	}
+}
+
+2) By reverse Iteration
+
+
+
+class Solution{
+
+	public static void main(String args[]) {
+		System.out.println("Is the string palindrome? "+checkPalindrome("racecar"));
+	}
+
+	private static boolean checkPalindrome(String name) {
+		String[] nameArr=name.split("");
+		for(int i=0;i<nameArr.length/2;i++)
+		{
+			if(!nameArr[i].equals(nameArr[nameArr.length-1-i]))
+				return false;
+		}
+		return true;
+	}
+}	
+
+
+public static void main(String args[]) {
+		System.out.println("Is the string palindrome? "+checkPalindromeWithCharArray("racecar"));
+	}
+
+	private static boolean checkPalindromeWithCharArray(String name) {
+		char[] charArr=name.toCharArray();
+		for(int i=0;i<charArr.length/2;i++)
+		{
+			if(!(charArr[i]==charArr[charArr.length-1-i]))
+				return false;
+		}
+		return true;
+	}
+  
+  
+  private static void reverseStringWithCharArray(String name) {
+		char[] charArr=name.toCharArray();
+		for(int i=0;i<charArr.length/2;i++)
+		{
+			char temp=charArr[i];
+			charArr[i]=charArr[charArr.length-1-i];
+			charArr[charArr.length-1-i]=temp;
+		}
+		
+		System.out.print("Reversed string is ");
+		System.out.println(charArr);
+	}

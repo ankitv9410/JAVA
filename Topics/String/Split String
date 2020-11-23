@@ -1,0 +1,23 @@
+1.
+class Class2
+{
+	public static void main(String[] args) {
+		int n=2;
+		String input = "abcaabbcc";
+		String []s = input.split("");
+		for(String s1 : s)
+			System.out.println(s1);
+	}
+}
+
+2.
+class Class2
+{
+	public static void main(String[] args) {
+		int n=2;
+		String input = "abcaabbcc";
+		char []c = input.toCharArray();
+		for(char c1 : c)
+			System.out.println(c1);
+	}
+}

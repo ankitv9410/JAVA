@@ -1,0 +1,3 @@
+for(Entry<String,Integer> eSet : hMap.entrySet()) {
+			System.out.println(eSet.getKey()+" "+eSet.getValue());
+		}

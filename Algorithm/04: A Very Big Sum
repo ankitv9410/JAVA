@@ -35,3 +35,21 @@ class Solution {
         System.out.println(arrTotal);
     }
 }                  
+                    OR
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+class Solution {
+    public static void main(String args[]) throws IOException {
+    	 int total = 0;
+    	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    	while (true) {
+    	    Scanner scanner = new Scanner(reader.readLine());
+    	    while (scanner.hasNextInt()) {
+    	        total += scanner.nextInt();
+    	    }
+    	    System.out.println("total: " + total);
+    	}
+    }
+}                    

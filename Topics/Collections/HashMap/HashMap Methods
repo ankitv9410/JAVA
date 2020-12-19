@@ -1,0 +1,3 @@
+HashMap<Integer,Integer> hmap = new Map<>();
+
+hmap.containsValue(2) ye true or false return krega

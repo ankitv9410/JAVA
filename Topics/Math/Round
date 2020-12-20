@@ -1,0 +1,10 @@
+class Demo {
+	public static void main(String args[]) {
+		int patient = 3;
+		double d = 2;
+		double q;
+		q= patient / d;
+		System.out.println(Math.round(q));
+	}
+}
+Agr decimal k baad ki value 5 se bdi aayegi toh ye bda dega vrna nhi bdaega.

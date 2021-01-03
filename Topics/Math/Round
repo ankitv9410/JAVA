@@ -7,4 +7,3 @@ class Demo {
 		System.out.println(Math.round(q));
 	}
 }
-Agr decimal k baad ki value 5 se bdi aayegi toh ye bda dega vrna nhi bdaega.

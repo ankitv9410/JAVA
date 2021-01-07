@@ -9,6 +9,12 @@ class GFG {
         // Converting ch to it's int value 
         int a = ch - '0'; 
         System.out.println("int value: " + a); 
+                        OR
+         int a = Character.getNumericValue(ch); 
+        System.out.println("int value: " + a);
+                        OR
+        int a = Integer.parseInt(String.valueOf(ch)); 
+        System.out.println("int value: " + a);
     } 
 } 
 output->3  3

@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Solution {
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		while (n-- > 0) {
+			int grade = scanner.nextInt();
+			if (grade > 38)
+				System.out.println(roundGrade(grade));
+			else
+				System.out.println(grade);
+		}
+		scanner.close();
+	}
+
+	public static int roundGrade(int grade) {
+		int checkGrade = grade % 5;
+		if (checkGrade > 2)
+			grade += 5 - checkGrade;
+		return grade;
+	}
+}

@@ -1,0 +1,3 @@
+Integer []arr = {1,5,200,20,3,2000};
+Arrays.sort(arr, Collections.reverseOrder());
+Note->Iske sath Object lena hai data type m vrna collection kaam nhi krega...collection primitive type pe kaam nhi krta

@@ -1,0 +1,12 @@
+1) String.valueOf()----->valueOf() is the static method of String class.
+2) Integer.toString()--->toString() is the static method of Integer class.
+3) String.format()
+--------------------------------------------
+Example of String.format()
+public class IntToStringExample3{  
+public static void main(String args[]){  
+int i=200;  
+String s=String.format("%d",i);  
+System.out.println(s);  
+}}  
+Output:->200

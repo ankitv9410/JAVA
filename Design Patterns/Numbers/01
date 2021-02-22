@@ -1,0 +1,19 @@
+class Solution {
+	public static void main(String args[]) {
+		for(int i=9;i>=5;i--) {
+			for(int j=5;j<i;j++) 
+				System.out.print(" ");
+			for(int j=9;j>=i;j--) 
+				System.out.print(j);
+			for(int j=i;j<9;j++) 
+				System.out.print(j+1);
+			System.out.println();
+		}
+	}
+}
+-------------------------------------------------------
+    9
+   989
+  98789
+ 9876789
+987656789

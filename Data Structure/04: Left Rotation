@@ -10,19 +10,24 @@ class Solution{
         for(int i=0;i<arr1.length;i++)
             arr1[i] = sc.nextInt();
         
-        int i=rotateIndex,j=0;
-        while(i<arr1.length) {
-            arr2[j]=arr1[i];
-            i++;
-            j++;
-        }
-        
-        int k=0;
-        while(k<rotateIndex) {
-            arr2[j]=arr1[k];
-            k++;
-            j++;
-        }
+       /*
+		 * int i=rotateIndex,j=0; while(i<arr1.length) { // System.out.println(j);
+		 * arr2[j]=arr1[i]; i++;  j++; }
+		 * 
+		 * int k=0; while(k<rotateIndex) {  arr2[j]=arr1[k];
+		 * k++; j++; }
+		 */
+         
+        int j = 0;
+		for (int i = rotateIndex; i < arr1.length; i++) {
+			arr2[j] = arr1[i];
+			j++;
+		}
+
+		for (int i = 0; i < rotateIndex; i++) {
+			arr2[j] = arr1[i];
+			j++;
+		}
         for(int printArr : arr2)
             System.out.print(printArr+" ");
     }

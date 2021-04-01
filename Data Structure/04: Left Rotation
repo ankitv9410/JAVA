@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class Solution{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int amountOfArray = sc.nextInt();
+        int rotateIndex = sc.nextInt();
+        int []arr1 = new int[amountOfArray];
+        int []arr2 = new int[amountOfArray];
+        
+        for(int i=0;i<arr1.length;i++)
+            arr1[i] = sc.nextInt();
+        
+        int i=rotateIndex,j=0;
+        while(i<arr1.length) {
+            arr2[j]=arr1[i];
+            i++;
+            j++;
+        }
+        
+        int k=0;
+        while(k<rotateIndex) {
+            arr2[j]=arr1[k];
+            k++;
+            j++;
+        }
+        for(int printArr : arr2)
+            System.out.print(printArr+" ");
+    }
+}

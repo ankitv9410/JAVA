@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class BackTracking {
+	public static void main(String args[]) {
+		// Your code here
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		int[][] arr = new int[n][n];
+		boolean[][] visited = new boolean[n][n];
+
+		for (int i = 0; i < arr.length; i++) 
+			for (int j = 0; j < arr.length; j++)  arr[i][j] = sc.nextInt();
+
+		rat(arr, 0, 0, "", visited);
+	}
+
+	public static void rat(int[][] arr, int row, int col, String ans, boolean[][] visited) {
+		if (row == arr.length - 1 && col == arr[0].length - 1)
+			System.out.println(ans);
+
+		if (row < 0 || col < 0 || row > arr.length - 1 || col > arr[0].length - 1 || visited[row][col]
+				|| arr[row][col] == 0)
+			return;
+
+		visited[row][col] = true;
+		rat(arr, row - 1, col, ans + "U", visited);
+		rat(arr, row + 1, col, ans + "D", visited);
+		rat(arr, row, col - 1, ans + "L", visited);
+		rat(arr, row, col + 1, ans + "R", visited);
+
+		visited[row][col] = false;
+	}
+}

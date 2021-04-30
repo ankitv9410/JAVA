@@ -1,2 +1,21 @@
 int n = 4;
 System.out.println(Integer.toBinaryString(n);
+----------------------------------------------
+class Solution {
+	public static void binary(int t) {
+		int arrMem = (int)Math.pow(t, 3);
+		int []arr=new int[arrMem];
+		int index=0;
+		while(t>0) {
+			arr[index++] = t%2;
+			t=t/2;
+		}
+		for(int i=index;i>=0;i--) {
+			System.out.print(arr[i]);
+		}
+	}
+
+	public static void main(String args[]) {
+		binary(3);
+	}
+}

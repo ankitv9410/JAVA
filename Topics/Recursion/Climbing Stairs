@@ -1,0 +1,48 @@
+Iss Question m hmare pass Stairs hai jaise ki 5. Hme 0 stair se 5th stair tk phuchna hai so how many ways to reach 5th stair and we have only 3 options like 1,2,3;
+agr hme 1,1,1 kr k chdenge toh kitne tariko se phuch paenge jaise 1,1,1,1,1 or 1,1,1,2 or 1,1,3 etc.
+
+Trick 1)
+class Recursion {
+	public static void stairs(int n, String ans) {
+		// -ve base case
+		if (n < 0) 
+			return;
+		
+		// +ve base case
+		if(n==0) 
+			System.out.println(ans);
+		
+		stairs(n - 1, ans + "1");
+		stairs(n - 2, ans + "2");
+		stairs(n - 3, ans + "3");
+	}
+
+	public static void main(String[] args) {
+		stairs(5, "");
+	}
+}  
+
+Trick 2)
+class Recursion {
+	public static void stairs(int currentStairs, int n, String ans) {
+		// -ve base case
+		if (currentStairs > n)
+			return;
+
+		// +ve base case
+		if (currentStairs == n)
+			System.out.println(ans);
+
+		stairs(currentStairs + 1, n, ans + "1");
+		stairs(currentStairs + 2, n, ans + "2");
+		stairs(currentStairs + 3, n, ans + "3");
+	}
+
+	public static void main(String[] args) {
+		stairs(0, 5, "");
+	}
+}
+
+-------------------------------------------------------------
+Output:
+11111,1112,1121,113,1211,122,131,2111,212,221,23,311,32

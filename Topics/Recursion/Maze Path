@@ -1,0 +1,26 @@
+Hmare pass rows and columns hai or hme 1 box(0,0) se last wale box(row,col) pe phuchna hai or hmare pass 3options hai vertically,Horizontally or diagonally.
+import java.util.Scanner;
+
+class Solution {
+	public static void maze(int row,int col,int x,int y,String ans) {
+		//-ve base case
+		if(x>row || y>col) {
+			return; 
+		}
+		//+ve base case
+		else if(x==row && y==col) {
+			System.out.println(ans);
+			return; 
+		}
+		maze(row,col,x,y+1,ans+"H"); //Horizontal
+		maze(row,col,x+1,y,ans+"V"); //Vertical
+		maze(row,col,x+1,y+1,ans+"D"); //Diagonally
+	}
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int row = 2;
+		int col = 3;
+		
+		maze(row,col,0,0,"");
+	} 	
+}

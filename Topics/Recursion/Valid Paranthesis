@@ -20,6 +20,35 @@ class Rough{
 		validParanthesis(n,0,0,"");
 	}
 }
----------------------------
 Output:
 (()), ()()
+---------------------------------------------
+Same program but Output stored in List
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Rough{
+	public static void validParanthesis(int n,int open,int close,String ans,ArrayList<String> l) {
+		
+		if(open>n || close>open) 
+			return;
+		if(open==n && close==n) {
+		//	System.out.println(ans);
+			l.add(ans);
+			return;
+		}
+			
+		validParanthesis(n, open+1, close, ans+"(",l);
+		validParanthesis(n, open, close+1, ans+")",l);
+	}
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<String> l = new ArrayList<>();
+		int n = 3;
+		
+		validParanthesis(n,0,0,"",l);
+		System.out.println(l);
+	}
+}
+Output:
+[((())), (()()), (())(), ()(()), ()()()]

@@ -24,3 +24,5 @@ class Solution {
 		maze(row,col,0,0,"");
 	} 	
 }
+Output:
+HHVV,HVHV,HVVH,HVD,HDV,VHHV,VHVH,VHD,VVHH,VDH,DHV,DVH,DD

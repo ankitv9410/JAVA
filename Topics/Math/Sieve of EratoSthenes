@@ -1,0 +1,28 @@
+class Solution {
+	public static void main(String args[]) throws IOException {
+		try {
+			Scanner sc = new Scanner();
+			int n = sc.nextInt();
+			boolean isPrime[] = sieveOfEratoSthenes(n);
+			
+			for (int i = 1; i <= n; i++) {
+				System.out.println(isPrime[i]);
+			}
+		} catch (Exception e) {
+			return;
+		}
+	}
+	public static boolean[] sieveOfEratoSthenes(int n) {
+		boolean isPrime[] = new boolean[n+1];
+		
+		for (int i = 2; i * i < n; i++) {
+			for (int j = 2 * i; j < isPrime.length; j+=i) {
+				isPrime[j] = true;
+			}
+		}
+		return isPrime;
+	}
+Time Complexity:- O(n _/n)
+                        ^
+                        |
+                        ----> Root N

@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Solution {
+	public static void main(String args[]) {
+		List<Ankit> list = new ArrayList<>();
+		list.add(new Ankit(10, "A"));
+		list.add(new Ankit(20, "B"));
+		list.add(new Ankit(30, "C"));
+		list.add(new Ankit(40, "D"));
+		list.add(new Ankit(50, "E"));
+		
+		Collections.sort(list);
+		
+		list.forEach(System.out::println);
+	}
+}
+
+class Ankit implements Comparable<Ankit> {
+	int marks;
+	String name;
+
+	Ankit(int marks, String name) {
+		this.marks = marks;
+		this.name = name;
+	}
+	public String toString() {
+		return "Name = "+name+" Marks = "+marks;
+	}
+	@Override
+	public int compareTo(Ankit obj) {
+		if(this.marks < obj.marks) return -1;
+		else if(this.marks > obj.marks) return 1;
+		return 0;
+	}
+}
+
+Explaination :- Comparable and comparator is used for sorting.Ye uss object ko sort krte hai jisne comparable ya comparator ko implement nhi kiya ho.
+Integer,String in sb objects ne implement kiya hua hai lekin agr hme apna object bnana hai jaise maine ankit class bnai hui or phir comparable ko implement kiya hai.
+isme this use hua hai current object k liye.agr current object bda hai dusre object se toh -1 return krega or chota hai toh +1 krega.
+toString method marks or name ko convert krega agr toString method nhi hoga toh sbki id print hogi vo khud nhi.

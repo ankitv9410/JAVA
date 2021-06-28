@@ -31,6 +31,20 @@ class Ankit implements Comparator<Ankit> {
 		this.marks = marks;
 		this.name = name;
 	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getMarks() {
+		return marks;
+	}
+
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
 
 	public String toString() {
 		return "Name = " + name + " Marks = " + marks;
@@ -70,5 +84,7 @@ Agr String compare krana hai sirf toh direct likh skte hai.
 	Collections.sort(list, (o1,o2) -> (o1.name.compareTo(o2.name)));
 	
 Agr mujhe sort krna hai phle name se phir agr name same ho toh marks se toh ek line m likh skte hai
+	Collections.sort(list, Comparator.comparing(Ankit::getName).thenComparing(Ankit::getMarks));
 
------------------------------------------------------------------------------------
+Agr reverse Order m sort krna hai 
+	Collections.sort(list, Comparator.comparing(Ankit::getName).thenComparing(Ankit::getMarks).reversed());

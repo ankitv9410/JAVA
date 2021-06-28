@@ -1,8 +1,14 @@
+Explaination :- Comparator is used for sorting.Ye uss object ko sort krte hai jisne comparable ya comparator ko implement nhi kiya ho.
+Integer,String in sb objects ne implement kiya hua hai lekin agr hme apna object bnana hai jaise maine ankit class bnai hui or phir comparator ko implement kiya hai.
+agr current object1 bda hai object2 se toh -1 return krega or chota hai toh +1 krega.
+toString method marks or name ko convert krega agr toString method nhi hoga toh sbki id print hogi vo khud nhi.
+comparator m sirf compare method use hota hai compare krne k liye object ko or string ko compare krne k liye compareTo hi use hota hai kyuki String ne comparable ko implement 
+kiya hua hai.
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
 class Solution {
 	public static void main(String args[]) {
 		List<Ankit> list = new ArrayList<>();
@@ -17,7 +23,6 @@ class Solution {
 		list.forEach(System.out::println);
 	}
 }
-
 class Ankit implements Comparator<Ankit> {
 	int marks;
 	String name;
@@ -39,3 +44,31 @@ class Ankit implements Comparator<Ankit> {
 			return o1.name.compareTo(o2.name);
 	}
 }
+-----------------------------------------------------------------------------------
+hm comparator ko alag se class m na likh kr Collections.sort m bhi likh skte phir class Ankit se htana pdhega
+		Collections.sort(list, new Comparator<Ankit>() {
+			public int compare(Ankit o1, Ankit o2) {
+				return o2.marks - o1.marks;
+			}
+		});
+		baaki sb same aayega.
+		
+After java 8 ->
+sbko pta hai ki comparator aana hi aana hai or ye bhi pta hai ki sirf compare method hi use hota hai or vo int return krega isliye sb hta denge lekin lembda function hai
+ye btana pdhega vo hm arrow se btaenge.
+		Collections.sort(list, (Ankit o1, Ankit o2) -> {
+				return o2.marks - o1.marks;
+		});
+		
+agr object print krre hai toh Ankit class ka hi kr rhe honge isliye Class ka naam hta skte hai.
+		
+		Collections.sort(list, (o1,o2) -> {
+				return o2.marks - o1.marks;
+		});
+
+Agr String compare krana hai sirf toh direct likh skte hai.
+	Collections.sort(list, (o1,o2) -> (o1.name.compareTo(o2.name)));
+	
+Agr mujhe sort krna hai phle name se phir agr name same ho toh marks se toh ek line m likh skte hai
+
+-----------------------------------------------------------------------------------

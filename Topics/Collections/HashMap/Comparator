@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Solution {
+	public static void main(String args[]) {
+		List<Ankit> list = new ArrayList<>();
+		list.add(new Ankit(10, "A"));
+		list.add(new Ankit(20, "B"));
+		list.add(new Ankit(30, "C"));
+		list.add(new Ankit(40, "D"));
+		list.add(new Ankit(50, "E"));
+
+		Collections.sort(list, new Ankit(0, null));
+
+		list.forEach(System.out::println);
+	}
+}
+
+class Ankit implements Comparator<Ankit> {
+	int marks;
+	String name;
+
+	Ankit(int marks, String name) {
+		this.marks = marks;
+		this.name = name;
+	}
+
+	public String toString() {
+		return "Name = " + name + " Marks = " + marks;
+	}
+
+	@Override
+	public int compare(Ankit o1, Ankit o2) {
+		if (o1.name.equals(o2.name))
+			return o1.marks - o2.marks;
+		else
+			return o1.name.compareTo(o2.name);
+	}
+}

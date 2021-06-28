@@ -30,8 +30,8 @@ class Ankit implements Comparable<Ankit> {
 	}
 	@Override
 	public int compareTo(Ankit obj) {
-		if(this.marks < obj.marks) return -1;
-		else if(this.marks > obj.marks) return 1;
+		if(this.marks < obj.marks) return -1;                                     // this.marks - obj.marks;																		
+		else if(this.marks > obj.marks) return 1;					ye teen line na likh kr ek line se bhi ho jaega sort
 		return 0;
 	}
 }
@@ -40,3 +40,4 @@ Explaination :- Comparable and comparator is used for sorting.Ye uss object ko s
 Integer,String in sb objects ne implement kiya hua hai lekin agr hme apna object bnana hai jaise maine ankit class bnai hui or phir comparable ko implement kiya hai.
 isme this use hua hai current object k liye.agr current object bda hai dusre object se toh -1 return krega or chota hai toh +1 krega.
 toString method marks or name ko convert krega agr toString method nhi hoga toh sbki id print hogi vo khud nhi.
+comparable m sirf compareTo method use hota hai compare krne k liye object ya string kisi ko bhi compare krne k liye.

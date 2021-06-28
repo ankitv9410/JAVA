@@ -88,3 +88,10 @@ Agr mujhe sort krna hai phle name se phir agr name same ho toh marks se toh ek l
 
 Agr reverse Order m sort krna hai 
 	Collections.sort(list, Comparator.comparing(Ankit::getName).thenComparing(Ankit::getMarks).reversed());
+--------------------------------------------------------------------------------------------------------------------------
+Array bhi sort kr skte hai comparator agr hmare pass koi object ho bilkul same 2 same hoga use.
+	Arrays.sort(arr, new Comparator<Ankit>() {
+			public int compare(Ankit o1,Ankit o2) {
+				return o1.start-o2.start;
+			}
+		});
